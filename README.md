@@ -4,6 +4,8 @@
 
 专为研究人员与开发者设计,零配置开箱即用,内置 FFmpeg,打包后单文件即可运行。
 
+工具采用深色主题,主界面包含 Step 1 抽帧、Step 2 CubeMap 切分、实时日志与底部状态栏。
+
 ---
 
 ## 功能特性
@@ -65,21 +67,13 @@ pano_gui/
 │   │   ├── ffprobe.exe      # 视频信息探测
 │   │   └── ffplay.exe
 │   └── presets/             # 编码预设
-└── dist/
-    └── 用于三维重建的全景视频预处理工具/
-        ├── 用于三维重建的全景视频预处理工具.exe
-        └── 用于三维重建的全景视频预处理工具Setup.exe
 ```
 
 ---
 
 ## 快速开始
 
-### 方式一:直接运行可执行文件(推荐普通用户)
-
-下载 `dist/` 目录下的安装包,双击 `Setup.exe` 安装后即可使用,无需配置 Python 环境。
-
-### 方式二:从源码运行(推荐开发者)
+## 从源码运行(推荐开发者)
 
 ```bash
 # 1. 克隆仓库
@@ -89,11 +83,10 @@ cd pano_gui
 # 2. 安装依赖
 pip install opencv-python numpy
 
-# 3. 运行
-python pano_gui.py
-```
+# 3. 安装FFmpeg
 
-> 注:FFmpeg 已内置在 `ffmpeg/bin/` 目录,无需额外安装。
+# 4. 运行
+python pano_gui.py
 
 ---
 
@@ -142,15 +135,6 @@ pyinstaller pano_gui.spec
 - 隐藏导入(cv2、numpy、PIL、multiprocessing 等)
 - UPX 压缩
 - 无控制台窗口(`console=False`)
-
----
-
-## 界面预览
-
-> 工具采用深色主题,主界面包含 Step 1 抽帧、Step 2 CubeMap 切分、实时日志与底部状态栏。
-
-<!-- 建议在此处插入截图 -->
-![界面预览](docs/screenshot.png)
 
 ---
 
